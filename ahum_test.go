@@ -1,16 +1,15 @@
 package ahum
 
 import (
+	"fmt"
 	"testing"
 )
 
 func TestConn(t *testing.T) {
-	msg, err := Conn()
+	r, n, err := Conn()
 	if err != nil {
 		t.Fatal(err)
 	}
-	if msg.Name == nil {
-		t.Fatal(err)
-	}
-
+	fmt.Println(r)
+	fmt.Println(n)
 }
