@@ -6,10 +6,9 @@ import (
 )
 
 func TestConn(t *testing.T) {
-	r, n, err := Conn()
+	r, err := Conn()
 	if err != nil {
 		t.Fatal(err)
 	}
 	fmt.Println(r)
-	fmt.Println(n)
 }
