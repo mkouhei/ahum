@@ -14,6 +14,7 @@ func Conn() (int64, error) {
 	if err != nil {
 		return -1, err
 	}
+	defer conn.Close()
 
 	msg := mqtt.NewConnectMessage()
 	msg.SetWillQos(1)
