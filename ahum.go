@@ -9,7 +9,7 @@ import (
 
 type MessageType byte
 
-func Conn() (int64, error) {
+func (c *config) Conn() (int64, error) {
 	conn, err := net.Dial("tcp", "localhost:1883")
 	if err != nil {
 		return -1, err
@@ -17,15 +17,15 @@ func Conn() (int64, error) {
 	defer conn.Close()
 
 	msg := mqtt.NewConnectMessage()
-	msg.SetWillQos(1)
-	msg.SetVersion(3)
-	msg.SetCleanSession(true)
-	msg.SetClientId([]byte("ahummq"))
+	msg.SetWillQos(c.WillQos)
+	msg.SetVersion(c.Version)
+	msg.SetCleanSession(c.CleanSession)
+	msg.SetClientId([]byte(c.ClientId))
 	msg.SetKeepAlive(10)
 	msg.SetWillTopic([]byte("will"))
 	msg.SetWillMessage([]byte("send me home"))
-	msg.SetUsername([]byte("guest"))
-	msg.SetPassword([]byte("passw0rd"))
+	msg.SetUsername([]byte(c.Username))
+	msg.SetPassword([]byte(c.Password))
 
 	r, n, err := msg.Encode()
 	if err != nil {
