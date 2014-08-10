@@ -1,6 +1,8 @@
 package ahum
 
 type config struct {
+	Host         string
+	Port         uint32
 	ClientId     string
 	Username     string
 	Password     string

@@ -1,6 +1,7 @@
 package ahum
 
 import (
+	"fmt"
 	"io"
 	"net"
 
@@ -10,7 +11,7 @@ import (
 type MessageType byte
 
 func (c *config) Conn() (int64, error) {
-	conn, err := net.Dial("tcp", "localhost:1883")
+	conn, err := net.Dial("tcp", fmt.Sprintf("%s:%d", c.Host, c.Port))
 	if err != nil {
 		return -1, err
 	}

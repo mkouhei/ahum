@@ -6,7 +6,7 @@ import (
 )
 
 func TestConn(t *testing.T) {
-	c := &config{"ahummq", "guest", "passw0rd", 1, 3, true, 10}
+	c := &config{"localhost", 1883, "ahummq", "guest", "passw0rd", 1, 3, true, 10}
 	r, err := c.Conn()
 	if err != nil {
 		t.Fatal(err)
