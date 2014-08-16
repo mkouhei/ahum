@@ -29,7 +29,7 @@ build-only:
 	go build -o _build/$(BIN)
 
 clean:
-	@rm -rf _build/
+	@rm -rf _build/$(BIN)
 	@rm -f ahum.test
 
 
