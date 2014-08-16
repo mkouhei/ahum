@@ -30,8 +30,6 @@ build-only:
 
 clean:
 	@rm -rf _build/$(BIN)
-	@rm -f ahum.test
-
 
 format:
 	for src in $(SRC); do \
