@@ -18,7 +18,7 @@ precheck:
 	fi
 
 prebuild:
-	go get github.com/surge/mqtt
+	go get -d -v ./...
 	install -d $(CURDIR)/_build/src/$(GOPKG)
 	cp -a $(CURDIR)/*.go $(CURDIR)/_build/src/$(GOPKG)
 
