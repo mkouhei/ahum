@@ -8,6 +8,6 @@ go:
   - tip
 
 install:
-  - make prebuild
+  - go get -d -v ./...
 script:
-  - make test
+  - go test -v -cover
