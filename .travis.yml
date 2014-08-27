@@ -8,6 +8,7 @@ go:
   - tip
 
 install:
+  - apt-get install -f -y mosquitto
   - go get -d -v ./...
 script:
-  - go test -v -cover
+  - go test -v
