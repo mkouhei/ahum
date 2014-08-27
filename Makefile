@@ -41,4 +41,4 @@ format:
 
 
 test: prebuild
-	go test -v
+	go test -v --cover
