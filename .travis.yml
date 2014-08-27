@@ -8,6 +8,8 @@ go:
   - tip
 
 install:
+  - sudo apt-get update
+  - sudo apt-get upgrade -f -y
   - sudo apt-get install -f -y mosquitto
   - go get -d -v ./...
 script:
