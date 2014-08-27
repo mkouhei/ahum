@@ -8,7 +8,7 @@ go:
   - tip
 
 install:
-  - apt-get install -f -y mosquitto
+  - sudo apt-get install -f -y mosquitto
   - go get -d -v ./...
 script:
   - go test -v
