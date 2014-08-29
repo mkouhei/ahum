@@ -41,4 +41,7 @@ format:
 
 
 test: prebuild
-	go test -v --cover
+	go test -v --coverprofile=c.out $(GOPKG)
+	go tool cover -func=c.out
+	unlink c.out
+
